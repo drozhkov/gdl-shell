@@ -1,0 +1,6 @@
+.vs/
+src/as-gdl-shell-test/
+.ionide/
+.vscode/
+src/as-gdl-shell/Debug/
+src/as-gdl-shell/Release/

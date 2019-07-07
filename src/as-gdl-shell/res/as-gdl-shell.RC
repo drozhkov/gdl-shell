@@ -1,0 +1,68 @@
+/*
+	ARCHICAD GDL Shell Add-On
+	Copyright (C) 2019 Denis Rozhkov <denis@rozhkoff.com>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+#include "Windows.h"
+#include "winver.h"
+
+#ifndef WINDOWS
+#define WINDOWS
+#endif
+
+#include "GDLExtDefs.h"
+
+1   VERSIONINFO LOADONCALL MOVEABLE
+FILEVERSION     1, 0, 0, 0
+PRODUCTVERSION  1, 0, 0, 0
+FILEFLAGSMASK   0
+FILEOS          VOS__WINDOWS32
+FILETYPE        VFT_APP
+BEGIN
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x409, 1252
+	END
+
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904E4"
+		BEGIN
+			VALUE "CompanyName", "Denis Rozhkov"
+			VALUE "FileDescription", "ARCHICAD GDL Shell Extension"
+			VALUE "LegalCopyright", "2019 Denis Rozhkov"
+			VALUE "ProductName", "AS GDL Shell"
+		END
+	END
+END
+
+
+32500	ACNF
+BEGIN
+	72, 0, 					/* sizeof (ACNF)(4)	*/
+	ACNF_VERSION, 0,		/* acnfVers     (4)	*/
+	PlatformCode, 0,		/* platform     (4)	*/
+	0, 0,					/* disableFlags (4)	*/
+	IoGDLMethod, 0,			/* method		(4)	*/
+	9,						/* methodVers   (2)	*/
+	0,						/* reserved     (2)	*/
+	PersistentFunction, 0,	/* methodFlags  (4)	*/
+	"date",					/* reserved     (4)	*/
+	"offs",					/* reserved     (4)	*/
+	"slen",					/* reserved     (4)	*/
+	0, 0,					/*  0			(4) */
+	"AS-SHELL\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"	/* module name	(32)*/
+END
