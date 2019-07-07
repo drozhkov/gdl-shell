@@ -2,7 +2,7 @@
 ARCHICAD GDL Shell Add-On
 
 ## usage
-```visual basic
+```vbnet
 ch = open("as-shell", "", "")
 v1 = ""
 nr = input(ch, "file-open", "", v1)
