@@ -1,5 +1,5 @@
 # gdl-shell
-ARCHICAD GDL Shell Add-On
+ARCHICAD 22/23 GDL Shell (Windows) Add-On
 
 ## usage
 ```visual basic

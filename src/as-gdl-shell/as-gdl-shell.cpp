@@ -75,7 +75,11 @@ GSErr __GDLEXT_CALL	OpenDataFile( Int32 channel, const GS::UniString & fileName,
 	return err;
 }
 
+#ifdef ASGDL_ARCHICAD22
 GSErr __GDLEXT_CALL	InputFromDataFile( Int32 channel, const GS::UniString & recordID, const GS::UniString & fieldID, Int32 nrvals, Int32 * nrgotvals, GS::Array<GdlValueRecord> & values, GS::Array<GS::UniString> & stringvals )
+#else
+GSErr __GDLEXT_CALL InputFromDataFile( Int32 channel, const GS::UniString & recordID, const GS::UniString & fieldID, Int32 nrvals, Int32 * nrgotvals, GDLRequestResult & values )
+#endif
 {
 	if (nrgotvals == nullptr || nrvals < 1) {
 		return Error;
@@ -109,17 +113,25 @@ GSErr __GDLEXT_CALL	InputFromDataFile( Int32 channel, const GS::UniString & reco
 		return Error;
 	}
 
+#ifdef ASGDL_ARCHICAD22
 	GdlValueRecord tmpVal;
 	stringvals.Insert( 0, GS::UniString( path.c_str() ) );
 	tmpVal.SetString( 0 );
 	values.Push( tmpVal );
+#else
+	values.AddString( GS::UniString( path.c_str() ) );
+#endif
 
 	*nrgotvals = 1;
 
 	return err;
 }
 
-GSErr __GDLEXT_CALL	OutputToDataFile( Int32, const GS::UniString &, const GS::UniString &, const GS::Array<GdlValueRecord> &, const GS::Array<GS::UniString> & )
+#ifdef ASGDL_ARCHICAD22
+GSErr __GDLEXT_CALL OutputToDataFile( Int32, const GS::UniString &, const GS::UniString &, const GS::Array<GdlValueRecord> &, const GS::Array<GS::UniString> & )
+#else
+GSErr __GDLEXT_CALL OutputToDataFile( Int32, const GS::UniString &, const GS::UniString &, const GDLRequestResult & )
+#endif
 {
 	return NoError;
 }
