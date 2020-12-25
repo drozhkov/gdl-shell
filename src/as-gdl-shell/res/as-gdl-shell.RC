@@ -26,8 +26,8 @@
 #include "GDLExtDefs.h"
 
 1   VERSIONINFO LOADONCALL MOVEABLE
-FILEVERSION     1, 0, 0, 0
-PRODUCTVERSION  1, 0, 0, 0
+FILEVERSION     1, 0, 1, 0
+PRODUCTVERSION  1, 0, 1, 0
 FILEFLAGSMASK   0
 FILEOS          VOS__WINDOWS32
 FILETYPE        VFT_APP
@@ -43,7 +43,7 @@ BEGIN
 		BEGIN
 			VALUE "CompanyName", "Denis Rozhkov"
 			VALUE "FileDescription", "ARCHICAD GDL Shell Extension"
-			VALUE "LegalCopyright", "2019 Denis Rozhkov"
+			VALUE "LegalCopyright", "2019-2020 Denis Rozhkov"
 			VALUE "ProductName", "AS GDL Shell"
 		END
 	END
